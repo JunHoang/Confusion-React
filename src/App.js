@@ -4,6 +4,7 @@ import Menu from './components/MenuComponent';
 import logo from './logo.svg';
 import './App.css';
 import {DISHES} from './shared/dishes';
+import DishDetail from './components/DishdetailComponent';
 
 class App extends Component {
 

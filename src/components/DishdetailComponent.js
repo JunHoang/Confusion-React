@@ -28,27 +28,27 @@ class DishDetail extends Component {
     }
 
     renderComments(comments) {
-        if (comments==null) {
+        if (comments == null) {
             return (
                 <div></div>
             )
         }
         const cmts = comments.map(comment => {
-            return(
+            return (
                 <li key={comment.id}>
                     <p>{comment.comment}</p>
-                    <p>-- {comment.author},&nbsp; 
+                    <p>-- {comment.author},&nbsp;
                         {new Intl.DateTimeFormat('en-US', {
-                            year:'numeric',
-                            month: 'long',
-                            day: '2-digit'
-                        }).format(new Date(comment.date))}
+                        year: 'numeric',
+                        month: 'long',
+                        day: '2-digit'
+                    }).format(new Date(comment.date))}
                     </p>
                 </li>
             )
         })
 
-        return(
+        return (
             <div>
                 <h4>Comments</h4>
                 <ul className="list-unstyled">{cmts}</ul>
@@ -61,20 +61,23 @@ class DishDetail extends Component {
         const dish = this.props.dish;
 
         if (dish == null) {
-            return(
+            return (
                 <div></div>
             )
         }
 
         return (
-            <div className="row">
-                <div className="col-12 col-md-5 m-1">
-                    {this.renderDish(this.props.dish)}
-                </div>
-                <div className="col-12 col-md-5 m-1">
-                    {this.renderComments(this.props.dish.comments)}
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md-5 m-1">
+                        {this.renderDish(this.props.dish)}
+                    </div>
+                    <div className="col-12 col-md-5 m-1">
+                        {this.renderComments(this.props.dish.comments)}
+                    </div>
                 </div>
             </div>
+
         )
     }
 }

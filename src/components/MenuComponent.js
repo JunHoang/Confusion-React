@@ -6,10 +6,11 @@ class Menu extends Component {
 
     constructor(props) {
         super(props);
+        console.log('Menu Component constructor is invoked');
+    }
 
-        this.state = {
-            selectedDish: null
-        }
+    componentDidMount() {
+        console.log('Menu Component componentDidMount is invoked');
     }
 
     render() {
@@ -25,6 +26,7 @@ class Menu extends Component {
                 </div>
             );
         });
+        console.log('Menu Component render is invoked');
 
         return (
             <div className="container">

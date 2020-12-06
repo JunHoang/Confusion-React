@@ -1,9 +1,9 @@
-# CONFUSION
+# CONFUSION-REACT
 
 ![](menu.png)
 
-## What is Confusion?
-Confusion is a website of the restaurant which will show the dishes, details of dishes and all the information of the restaurant. This website helps users can login, see all dishes, comment on dishes and mark favorites dishes easily.  
+## What is Confusion-React?
+Confusion-React is a website of the restaurant which will show the dishes, details of dishes and all the information of the restaurant. This website helps users can login, see all dishes, comment on dishes and mark favorites dishes easily.  
 
 The website was completely written in React framework together with Redux.
 

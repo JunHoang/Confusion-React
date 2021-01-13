@@ -1,5 +1,5 @@
 # CONFUSION-REACT
-You can see the websit [here](https://hungry-react.netlify.app/home)
+You can see the websit [here](https://hungry-react.netlify.app/)
 
 ![](menu.png)
 

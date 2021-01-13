@@ -10,7 +10,7 @@ function RenderLeader({ leader }) {
         <div key={leader.id} className="col-12">
             <Media tag="li">
                 <Media left middle className="mt-1">
-                    <Media object src={baseUrl + leader.image} alt={leader.name} />
+                    <Media object src={leader.image} alt={leader.name} />
                 </Media>
                 <Media body className="ml-5">
                     <Media heading>{leader.name}</Media>

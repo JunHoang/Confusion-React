@@ -32,9 +32,16 @@ const items = [
 function RenderLeader({ leader }) {
   return (
     <div key={leader.id} className="col-12">
-      <Media tag="li">
+      <Media tag="li" className="py-2">
         <Media left middle className="mt-1">
-          <Media object src={leader.image} alt={leader.name} />
+          <Media
+            className="img-fluid rounded"
+            object
+            src={leader.image}
+            alt={leader.name}
+            width="150px"
+            height="150px"
+          />
         </Media>
         <Media body className="ml-5">
           <Media heading>{leader.name}</Media>

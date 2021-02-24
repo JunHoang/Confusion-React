@@ -40,10 +40,7 @@ export class MapContainer extends Component {
           lng: 24.967,
         }}
       >
-        <Marker
-          onClick={this.onMarkerClick}
-          name={"Kenyatta International Convention Centre"}
-        />
+        <Marker onClick={this.onMarkerClick} name={"Hungry React Restaurant"} />
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}

@@ -1,15 +1,9 @@
 import React from "react";
-import {
-  Card,
-  CardImg,
-  CardImgOverlay,
-  CardTitle,
-  Media,
-  Breadcrumb,
-  BreadcrumbItem,
-} from "reactstrap";
+import { Card, CardImg, Media, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Loading } from "./LoadingComponent";
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tab";
 
 function RenderMenuItem({ dish }) {
   return (
@@ -35,7 +29,35 @@ function RenderMenuItem({ dish }) {
 }
 
 const Menu = (props) => {
-  const menu = props.dishes.dishes.map((dish) => {
+  const mains = props.dishes.dishes.filter(
+    (mainDish) => mainDish.category === "mains"
+  );
+
+  const desserts = props.dishes.dishes.filter(
+    (mainDish) => mainDish.category === "dessert"
+  );
+
+  const drinks = props.dishes.dishes.filter(
+    (mainDish) => mainDish.category === "drink"
+  );
+
+  const mainsMenu = mains.map((dish) => {
+    return (
+      <div key={dish._id} className="col-12 col-md-6">
+        <RenderMenuItem dish={dish} onClick={props.onClick} />
+      </div>
+    );
+  });
+
+  const dessertsMenu = desserts.map((dish) => {
+    return (
+      <div key={dish._id} className="col-12 col-md-6">
+        <RenderMenuItem dish={dish} onClick={props.onClick} />
+      </div>
+    );
+  });
+
+  const drinksMenu = drinks.map((dish) => {
     return (
       <div key={dish._id} className="col-12 col-md-6">
         <RenderMenuItem dish={dish} onClick={props.onClick} />
@@ -73,10 +95,21 @@ const Menu = (props) => {
           </Breadcrumb>
           <div className="col-12">
             <h3>Menu</h3>
-            <hr />
           </div>
         </div>
-        <div className="row">{menu}</div>
+        <div>
+          <Tabs defaultActiveKey="mains" id="menu">
+            <Tab eventKey="mains" title="Mains">
+              <div className="row">{mainsMenu}</div>
+            </Tab>
+            <Tab eventKey="desserts" title="Desserts">
+              <div className="row">{dessertsMenu}</div>
+            </Tab>
+            <Tab eventKey="drinks" title="Drinks">
+              <div className="row">{drinksMenu}</div>
+            </Tab>
+          </Tabs>
+        </div>
       </div>
     );
 };

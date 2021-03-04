@@ -26,9 +26,11 @@ function Footer(props) {
           <div className="col-7 col-sm-5">
             <h5>Our Address</h5>
             <address className="address">
-              Raiviosuonmäki
+              Hämeentie 111
               <br />
-              Vantaa, FINLAND
+              00560 Helsinki
+              <br />
+              FINLAND
               <br />
               <i className="fa fa-phone fa-lg"></i> +358 465 712 157
               <br />

@@ -63,7 +63,15 @@ function Header() {
 
   return (
     <React.Fragment>
-      <Navbar dark expand="md" className="fixed-top">
+      <Navbar
+        dark
+        expand="md"
+        className="fixed-top"
+        style={{
+          backgroundColor:
+            scrollPosition > 50 || isNavOpen ? "black" : "transparent",
+        }}
+      >
         <div className="container">
           <NavbarToggler onClick={toggleNav} />
           <NavbarBrand className="mr-auto" href="/">
@@ -71,7 +79,7 @@ function Header() {
               src="assets/images/logo.png"
               height="30"
               width="41"
-              alt="Ristorant ConFusion"
+              alt="Hungry React"
             />
           </NavbarBrand>
           <Collapse isOpen={isNavOpen} navbar>

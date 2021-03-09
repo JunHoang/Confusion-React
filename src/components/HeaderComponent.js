@@ -23,6 +23,11 @@ import useScroll from "../hooks/useScroll";
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [form, setForm] = useState({
+    username: "",
+    password: "",
+    remember: false,
+  });
 
   // constructor(props) {
   //   super(props);
@@ -49,11 +54,11 @@ function Header() {
     this.toggleModal();
     alert(
       " Username: " +
-        this.username.value +
+        form.username.value +
         " Password: " +
-        this.password.value +
+        form.password.value +
         " Remember: " +
-        this.remember.checked
+        form.remember.checked
     );
     event.preventDefault();
   }
@@ -155,7 +160,7 @@ function Header() {
                 type="text"
                 id="username"
                 name="username"
-                innerRef={(input) => (this.username = input)}
+                innerRef={(input) => (form.username = input)}
               />
             </FormGroup>
             <FormGroup>
@@ -164,7 +169,7 @@ function Header() {
                 type="password"
                 id="password"
                 name="password"
-                innerRef={(input) => (this.password = input)}
+                innerRef={(input) => (form.password = input)}
               />
             </FormGroup>
             <FormGroup check>
@@ -172,7 +177,7 @@ function Header() {
                 <Input
                   type="checkbox"
                   name="remember"
-                  innerRef={(input) => (this.remember = input)}
+                  innerRef={(input) => (form.remember = input)}
                 />
                 Remember me
               </Label>
